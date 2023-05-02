@@ -72,7 +72,7 @@ body {
   display: flex;
   align-items: center;
   border-radius: 5px;
-  padding: 20px 120px 20px 40px;
+  padding: 20px 120px 20px 22px;
   background: rgb(36, 36, 56);
   width: 100%;
 }
@@ -86,7 +86,7 @@ body {
   outline: none;
 }
 
-/* .todo__btn {
+.todo__btn {
   top: 50%;
   transform: translateY(-50%);
   right: 20px;
@@ -98,7 +98,7 @@ body {
   color: #737270;
   cursor: pointer;
   transition: all 0.2s;
-} */
+}
 /* .todo__btn:hover {
   color: #fffefb;
   transition: all 0.2s;
@@ -122,7 +122,7 @@ body {
   display: flex;
   align-items: center;
   position: relative;
-  padding: 19px 40px 19px 10px;
+  padding: 19px 40px 19px 22px;
   background: rgb(36, 36, 56);
   border-bottom: 1px solid #4e4e4e;
 }
@@ -171,12 +171,7 @@ body {
   display: block;
   transform: rotate(-45deg) translateY(-50%);
 }
-.todo__del-btn:hover::after {
-  box-shadow: 0 0 1px #fffefb;
-}
-.todo__del-btn:hover::before {
-  box-shadow: 0 0 1px #fffefb;
-}
+
 
 
 
@@ -262,7 +257,7 @@ body {
   border-radius: 0 0 5px 5px;
   display: flex;
   justify-content: space-between;
-  padding: 19px 40px;
+  padding: 19px 22px;
   background: rgb(36, 36, 56);
   color: #737270;
 }
@@ -284,11 +279,7 @@ body {
   cursor: pointer;
   transition: all 0.2s;
 }
-.todo-footer__btn:hover {
-  color: #fffefb;
-  transition: all 0.2s;
-  box-shadow: 0 0 7px #fffefb;
-}
+
 
 .footer-active {
   display: block;
@@ -303,19 +294,7 @@ body {
     box-shadow: 0 0 7px #fffefb;
   }
 }  */
-.todo__btn {
-  top: 50%;
-  transform: translateY(-50%);
-  right: 20px;
-  position: absolute;
-  border-radius: 5px;
-  padding: 10px;
-  background: transparent;
-  border: 1px solid #737270;
-  color: #737270;
-  cursor: pointer;
-  transition: all 0.2s;
-}
+
 /* .todo__btn:hover {
   color: #fffefb;
   transition: all 0.2s;
@@ -324,20 +303,31 @@ body {
 
 
 
-/* @media (min-width: 768px) {
+@media (min-width: 768px) { /*рабочий вариант*/
+  .todo__btn:hover {
+    color: #fffefb;
+    transition: all 0.2s;
+    box-shadow: 0 0 7px #fffefb;
+  }
+  .todo-footer__btn:hover {
+    color: #fffefb;
+    transition: all 0.2s;
+    box-shadow: 0 0 7px #fffefb;
+  }
+  .todo__del-btn:hover::after {
+    box-shadow: 0 0 1px #fffefb;
+  }
+  .todo__del-btn:hover::before {
+    box-shadow: 0 0 1px #fffefb;
+  }
+}
+/* @media (hover : hover) { Рабочий вариант
   .todo__btn:hover {
     color: #fffefb;
     transition: all 0.2s;
     box-shadow: 0 0 7px #fffefb;
   }
 } */
-@media (hover : hover) {
-  .todo__btn:hover {
-    color: #fffefb;
-    transition: all 0.2s;
-    box-shadow: 0 0 7px #fffefb;
-  }
-}
 
  /* @media (max-width: 768px) {
   *:hover{

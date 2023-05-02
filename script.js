@@ -57,19 +57,15 @@ function deleteTask (event) {
     parenNode.remove()
     count--
     countSpan.innerText = count
-    if (count === 0) {
-      return
-    }
-    
+    if (todoList.children.length === 0) {
+      footer.classList.remove('footer-active')
+    } 
   }
-  if (todoList.children.length === 0) {
-    footer.classList.remove('footer-active')
-  }
-  
 }
 
 //Функция для создания текущей задачи 
 function addTask () {
+
   if (input.value === '') return
 
   if (todoList.children.length < 1) {
