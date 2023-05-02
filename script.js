@@ -83,7 +83,7 @@ function addTask () {
       <button class="todo__del-btn"></button>
     </li>
   `
-  todoList.insertAdjacentHTML('beforeend', newElement)  
+  todoList.insertAdjacentHTML('afterbegin', newElement)  
   input.value = ''
   input.focus()
   count++
