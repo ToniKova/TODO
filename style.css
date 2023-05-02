@@ -86,7 +86,7 @@ body {
   outline: none;
 }
 
-.todo__btn {
+/* .todo__btn {
   top: 50%;
   transform: translateY(-50%);
   right: 20px;
@@ -98,13 +98,12 @@ body {
   color: #737270;
   cursor: pointer;
   transition: all 0.2s;
-}
-
-.todo__btn:hover {
+} */
+/* .todo__btn:hover {
   color: #fffefb;
   transition: all 0.2s;
   box-shadow: 0 0 7px #fffefb;
-}
+} */
 
 
 .todo__list-wrapper {
@@ -297,7 +296,42 @@ body {
 
 }
 
-@media(hover: hover){
+/* @media(hover: hover){
+  .todo__btn:hover {
+    color: #fffefb;
+    transition: all 0.2s;
+    box-shadow: 0 0 7px #fffefb;
+  }
+}  */
+.todo__btn {
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  position: absolute;
+  border-radius: 5px;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid #737270;
+  color: #737270;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+/* .todo__btn:hover {
+  color: #fffefb;
+  transition: all 0.2s;
+  box-shadow: 0 0 7px #fffefb;
+} */
+
+
+
+/* @media (min-width: 768px) {
+  .todo__btn:hover {
+    color: #fffefb;
+    transition: all 0.2s;
+    box-shadow: 0 0 7px #fffefb;
+  }
+} */
+@media (hover : hover) {
   .todo__btn:hover {
     color: #fffefb;
     transition: all 0.2s;
@@ -305,7 +339,16 @@ body {
   }
 }
 
-
+ /* @media (max-width: 768px) {
+  *:hover{
+    pointer-events: none;
+  }
+} */
+/* @media only screen and (max-width: 768px) {
+  *:hover {
+    pointer-events: none;
+  }
+}  */
 
 
 
