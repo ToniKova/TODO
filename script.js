@@ -1,35 +1,95 @@
 
-const itemValue = document.querySelector('.todo__item-value')
-const itemCircle = document.querySelector('.todo__item-circle')
-const itemCircle2 = document.querySelector('.circle-active')
+
 const todoBtn = document.querySelector('.todo__btn')
-const tedoList = document.querySelector('.todo__list')
+const todoList = document.querySelector('.todo__list')
 const input = document.getElementById('input')
+const footer = document.querySelector('.todo-footer')
+const countSpan = document.getElementById('span')
 
+let count = 0
 
-// itemValue.addEventListener('click', () => {
-//   itemCircle2.style.display = 'block'
-//   itemCircle.style.display = 'none'
-//   itemValue.classList.add('value-ective')
-// })
-// itemCircle.addEventListener('click', () => {
-//   itemCircle.style.display = 'none'
-//   itemCircle2.style.display = 'block'
-//   itemValue.classList.add('value-ective')
-// })
+todoList.addEventListener('click', markTask)
+todoBtn.addEventListener('click', addTask)
+todoList.addEventListener('click' , deleteTask)
 
-todoBtn.addEventListener('click', addListItem)
+//Обработчик для добавления задачи по клавише ЭНТЕР
+document.addEventListener('keydown', (event) => {
+  if (event.code === 'Enter') {
+    addTask()
+  }
+})
 
-function addListItem (event) {
-  const newElem = `
+//Функция для отметки выполненной задачи
+function markTask (event) {
+  if (event.target.classList.contains('todo__item-value')) {
+    const parenNode = event.target.closest('.todo__list-item')
+    const taskTitle = parenNode.querySelector('.todo__item-value')
+    const taskCircle = parenNode.querySelector('.todo__item-circle')
+    const taskCircleActive = parenNode.querySelector('.circle-active')
+
+    taskCircleActive.classList.add('circle-done')
+    taskCircle.classList.add('item-circle-done')
+    taskTitle.classList.add('value-ective')
+
+    count--
+    countSpan.innerText = count
+  }
+
+  if (event.target.classList.contains('todo__item-circle')) {
+    const parenNode = event.target.closest('.todo__list-item')
+    const taskTitle = parenNode.querySelector('.todo__item-value')
+    const taskCircle = parenNode.querySelector('.todo__item-circle')
+    const taskCircleActive = parenNode.querySelector('.circle-active')
+
+    taskCircleActive.classList.add('circle-done')
+    taskCircle.classList.add('item-circle-done')
+    taskTitle.classList.add('value-ective')
+    
+    count--
+    countSpan.innerText = count
+  }
+}
+
+//Функция для удаления выполненой задачи
+function deleteTask (event) {
+  if (event.target.classList.contains('todo__del-btn')) {
+    const parenNode = event.target.closest('.todo__list-item')
+    parenNode.remove()
+    count--
+    countSpan.innerText = count
+    if (count === 0) {
+      return
+    }
+    
+  }
+  if (todoList.children.length === 0) {
+    footer.classList.remove('footer-active')
+  }
+  
+}
+
+//Функция для создания текущей задачи 
+function addTask () {
+  if (input.value === '') return
+
+  if (todoList.children.length < 1) {
+    footer.classList.add('footer-active')
+  } 
+  const newElement = `
     <li class="todo__list-item">
-    <span></span>
-    <div class="todo__item-circle"></div>
-    <div class="circle-active"></div>
-    <p class="todo__item-value">${input.value}</p>
+      <div class="todo__item-circle"></div>
+      <div class="circle-active"></div>
+      <p class="todo__item-value">${input.value}</p>
+      <button class="todo__del-btn"></button>
     </li>
   `
-  tedoList.innerHTML += newElem
+  todoList.insertAdjacentHTML('beforeend', newElement)  
+  input.value = ''
+  input.focus()
+  count++
+  countSpan.innerText = count
+
+
 }
 
 

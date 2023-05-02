@@ -17,6 +17,7 @@ body {
 .wrapper {
   position: relative;
   padding-top: 70px;
+  padding-bottom: 70px;
   background-image: url('./img/bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -30,7 +31,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.37);
+  background: rgba(0, 0, 0, 0.473);
   z-index: 1;
 }
 .container {
@@ -66,7 +67,7 @@ body {
 
 .todo__label {
   position: relative;
-  box-shadow: 0 0 20px #242323;
+  box-shadow: 0 0 20px #646464;
   margin-bottom: 15px;
   display: flex;
   align-items: center;
@@ -108,11 +109,13 @@ body {
 
 .todo__list-wrapper {
   border-radius: 5px 5px 0 0;
-  box-shadow: 0 0 20px #242323;
+  /* box-shadow: 0 0 20px #242323; */
 }
 
 .todo__list {
   list-style: none;
+  box-shadow: 0 0 20px #646464;
+
 }
 
 
@@ -125,7 +128,11 @@ body {
   border-bottom: 1px solid #4e4e4e;
 }
 
-.todo__list-item span{
+.todo__list-item:first-child {
+  border-radius: 5px 5px 0px 0px;
+}
+
+.todo__del-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -134,8 +141,12 @@ body {
   height: 20px;
   display: block;
   cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
 }
-.todo__list-item span::before {
+
+.todo__del-btn::before {
   position: absolute;
   content: '';
   bottom: 50%;
@@ -146,7 +157,11 @@ body {
   display: block;
   transform: rotate(45deg) translateY(-50%);
 }
-.todo__list-item span::after {
+.todo__del-btn::before:hover {
+  box-shadow: 0 0 7px #fffefb;
+  background-color: red;
+}
+.todo__del-btn::after {
   position: absolute;
   content: '';
   bottom: 50%;
@@ -156,6 +171,12 @@ body {
   background-color: #4e4e4e;
   display: block;
   transform: rotate(-45deg) translateY(-50%);
+}
+.todo__del-btn:hover::after {
+  box-shadow: 0 0 1px #fffefb;
+}
+.todo__del-btn:hover::before {
+  box-shadow: 0 0 1px #fffefb;
 }
 
 
@@ -171,6 +192,9 @@ body {
   /* background-color: red; */
   position: relative;
   z-index: 100;
+}
+.circle-done {
+  display: block;
 }
 .circle-active::before {
   content: '';
@@ -192,6 +216,9 @@ body {
   height: 20px;
   background: #4e4e4e;
   border-radius: 50%;
+}
+.item-circle-done {
+  display: none;
 }
 .todo__item-circle::before {
   content: '';
@@ -226,6 +253,11 @@ body {
 }
 
 .todo-footer {
+  display: none;
+  
+}
+
+.todo-footer__inner {
   position: relative;
   font-size: 14px;
   border-radius: 0 0 5px 5px;
@@ -234,7 +266,6 @@ body {
   padding: 19px 40px;
   background: rgb(36, 36, 56);
   color: #737270;
-
 }
 
 .todo-foote__all-task span {
@@ -258,6 +289,12 @@ body {
   color: #fffefb;
   transition: all 0.2s;
   box-shadow: 0 0 7px #fffefb;
+}
+
+.footer-active {
+  display: block;
+  box-shadow: 0 0 20px #646464;
+
 }
 
 
