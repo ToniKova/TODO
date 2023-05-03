@@ -4,10 +4,16 @@ const todoBtn = document.querySelector('.todo__btn')
 const todoList = document.querySelector('.todo__list')
 const input = document.getElementById('input')
 const footer = document.querySelector('.todo-footer')
-const countSpan = document.getElementById('span')
+const countSpan = document.getElementById('span-all')
+const countSpanFin = document.getElementById('span-fin')
+const btnAllDel = document.querySelector('.todo-footer__btn')
+console.log(btnAllDel)
 
 let count = 0
+let countFin = 0
 
+
+btnAllDel.addEventListener('click', delAllTask)
 todoList.addEventListener('click', markTask)
 todoBtn.addEventListener('click', addTask)
 todoList.addEventListener('click' , deleteTask)
@@ -21,19 +27,19 @@ document.addEventListener('keydown', (event) => {
 
 //Функция для отметки выполненной задачи
 function markTask (event) {
-  if (event.target.classList.contains('todo__item-value')) {
-    const parenNode = event.target.closest('.todo__list-item')
-    const taskTitle = parenNode.querySelector('.todo__item-value')
-    const taskCircle = parenNode.querySelector('.todo__item-circle')
-    const taskCircleActive = parenNode.querySelector('.circle-active')
+  // if (event.target.classList.contains('todo__item-value')) {
+  //   const parenNode = event.target.closest('.todo__list-item')
+  //   const taskTitle = parenNode.querySelector('.todo__item-value')
+  //   const taskCircle = parenNode.querySelector('.todo__item-circle')
+  //   const taskCircleActive = parenNode.querySelector('.circle-active')
 
-    taskCircleActive.classList.add('circle-done')
-    taskCircle.classList.add('item-circle-done')
-    taskTitle.classList.add('value-ective')
+  //   taskCircleActive.classList.add('circle-done')
+  //   taskCircle.classList.add('item-circle-done')
+  //   taskTitle.classList.add('value-ective')
 
-    count--
-    countSpan.innerText = count
-  }
+  //   count--
+  //   countSpan.innerText = count
+  // }
 
   if (event.target.classList.contains('todo__item-circle')) {
     const parenNode = event.target.closest('.todo__list-item')
@@ -45,9 +51,9 @@ function markTask (event) {
     taskCircle.classList.add('item-circle-done')
     taskTitle.classList.add('value-ective')
     
-    count--
-    countSpan.innerText = count
-  }
+    // countFin++
+    // countSpanFin.innerText = countFin
+  } 
 }
 
 //Функция для удаления выполненой задачи
@@ -65,9 +71,7 @@ function deleteTask (event) {
 
 //Функция для создания текущей задачи 
 function addTask () {
-
   if (input.value === '') return
-
   if (todoList.children.length < 1) {
     footer.classList.add('footer-active')
   } 
@@ -85,6 +89,15 @@ function addTask () {
   count++
   countSpan.innerText = count
 
+}
+
+function delAllTask () {
+  todoList.innerHTML = ''
+  if (todoList.children.length === 0) {
+    footer.classList.remove('footer-active')
+    count = 0
+    countSpan.innerText = count
+  } 
 
 }
 

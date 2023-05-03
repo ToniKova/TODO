@@ -238,7 +238,7 @@ body {
 
 
 .todo__item-value {
-  cursor: pointer;
+  /* cursor: pointer; */
   display: inline-block;
 }
 .value-ective {
@@ -256,7 +256,6 @@ body {
   font-size: 14px;
   border-radius: 0 0 5px 5px;
   display: flex;
-  justify-content: space-between;
   padding: 19px 22px;
   background: rgb(36, 36, 56);
   color: #737270;
@@ -264,6 +263,12 @@ body {
 
 .todo-foote__all-task span {
   margin-left: 5px;
+}
+.todo-foote__all-task {
+  margin-right: 15px;
+}
+.todo-foote__finish-task {
+
 }
 
 .todo-footer__btn {
