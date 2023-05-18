@@ -304,22 +304,6 @@ body {
 
 }
 
-/* @media(hover: hover){
-  .todo__btn:hover {
-    color: #fffefb;
-    transition: all 0.2s;
-    box-shadow: 0 0 7px #fffefb;
-  }
-}  */
-
-/* .todo__btn:hover {
-  color: #fffefb;
-  transition: all 0.2s;
-  box-shadow: 0 0 7px #fffefb;
-} */
-
-
-
 @media (min-width: 768px) { /*рабочий вариант*/
   .todo__btn:hover {
     color: #fffefb;
@@ -357,5 +341,14 @@ body {
   }
 }  */
 
-
+@media(max-width:1440px) {
+  .todo__list-wrapper {
+    max-height: 472px;
+  }
+}
+@media(max-wifth:425px) {
+  .todo__list-wrapper {
+    max-height: 400px;
+  }
+}
 
