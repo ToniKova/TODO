@@ -56,8 +56,12 @@ body {
 .todo__title {
   text-transform: uppercase;
   font-size: 50px;
-  letter-spacing: 10px;
+  letter-spacing: 7px;
   font-weight: 400;  
+}
+.todo__title span {
+  font-size: 27px;
+  margin-left: 10px;
 }
 
 
@@ -108,14 +112,22 @@ body {
 
 .todo__list-wrapper {
   border-radius: 5px 5px 0 0;
-  /* box-shadow: 0 0 20px #242323; */
+  box-shadow: 0 0 20px #646464;
+
+  max-height: 600px;
+}
+
+.simplebar-scrollbar:before {
+  background: #646464;
 }
 
 .todo__list {
   list-style: none;
   box-shadow: 0 0 20px #646464;
-
+  position: relative;
+  max-height: 600px;
 }
+
 
 
 .todo__list-item {
@@ -170,6 +182,7 @@ body {
   background-color: #4e4e4e;
   display: block;
   transform: rotate(-45deg) translateY(-50%);
+  
 }
 
 

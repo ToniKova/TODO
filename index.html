@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+  rel="stylesheet"href="https://unpkg.com/simplebar@latest/dist/simplebar.css">
   <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
@@ -12,7 +14,7 @@
     <div class="container">
       <div class="todo__inner">
         <div class="todo__box-title">
-          <h1 class="todo__title">todo</h1>
+          <h1 class="todo__title">todo<span>List</span></h1>
           <img src="img/icon-sun.svg" alt="Sun">
         </div>
         <div class="todo__lebal-box">
@@ -21,7 +23,7 @@
             <button class="todo__btn" aria-haspopup="true">Добавить</button>
           </label>
         </div>
-        <div class="todo__list-wrapper">
+        <div class="todo__list-wrapper"data-simplebar>
           <ul class="todo__list">
             <!-- <li class="todo__list-item">
               <div class="todo__item-circle"></div>
@@ -51,7 +53,7 @@
 
   
 
-
+  <script src="simpel-bar.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
