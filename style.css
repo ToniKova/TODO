@@ -113,8 +113,7 @@ body {
 .todo__list-wrapper {
   border-radius: 5px 5px 0 0;
   box-shadow: 0 0 20px #646464;
-
-  max-height: 600px;
+  max-height: 590px;
 }
 
 .simplebar-scrollbar:before {
@@ -124,7 +123,6 @@ body {
 .todo__list {
   list-style: none;
   box-shadow: 0 0 20px #646464;
-  position: relative;
   max-height: 600px;
 }
 
@@ -302,6 +300,7 @@ body {
 .footer-active {
   display: block;
   box-shadow: 0 0 20px #646464;
+  border-radius: 0 0 5px 5px;
 
 }
 
