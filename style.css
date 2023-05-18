@@ -354,3 +354,8 @@ body {
   }
 }
 
+@media(max-width:320px) {
+  .todo__list-wrapper {
+    max-height: 340px;
+  }
+}
