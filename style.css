@@ -346,7 +346,7 @@ body {
     max-height: 472px;
   }
 }
-@media(max-wifth:425px) {
+@media(max-width:425px) {
   .todo__list-wrapper {
     max-height: 400px;
   }
